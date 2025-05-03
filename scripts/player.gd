@@ -5,6 +5,7 @@ const SPEED = 175.0
 const JUMP_VELOCITY = -300.0
 
 @onready var animated = $AnimatedSprite2D
+@onready var collison = $CollisionShape2D
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -23,14 +24,14 @@ func _physics_process(delta: float) -> void:
 	
 	if direction > 0:
 		animated.flip_h = false
+
 	elif direction < 0:
 		animated.flip_h = true
-	
+
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
 	if is_on_floor():
 		if direction == 0:
 			animated.play("IDLE")

@@ -169,13 +169,13 @@ region = Rect2(880, 0, 80, 80)
 atlas = ExtResource("4_fjrip")
 region = Rect2(960, 0, 80, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_twgab"]
-atlas = ExtResource("4_fjrip")
-region = Rect2(1040, 0, 80, 80)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_02fa5"]
 atlas = ExtResource("4_fjrip")
 region = Rect2(1120, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twgab"]
+atlas = ExtResource("4_fjrip")
+region = Rect2(1040, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nepv3"]
 atlas = ExtResource("4_fjrip")
@@ -350,10 +350,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_gxtfn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_twgab")
+"texture": SubResource("AtlasTexture_02fa5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_02fa5")
+"texture": SubResource("AtlasTexture_twgab")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nepv3")
@@ -387,8 +387,7 @@ animations = [{
 "speed": 24.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kvuet"]
-radius = 19.3929
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
 
 [node name="PLAYER" type="CharacterBody2D"]
 z_index = 5
@@ -398,10 +397,10 @@ script = ExtResource("1_dqkch")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(38, 2)
 sprite_frames = SubResource("SpriteFrames_dinhu")
-animation = &"IDLE"
+animation = &"run"
 autoplay = "IDLE"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(28, 8)
+position = Vector2(28, 7)
 scale = Vector2(0.640922, 0.771174)
-shape = SubResource("CircleShape2D_kvuet")
+shape = SubResource("CircleShape2D_dqkch")
