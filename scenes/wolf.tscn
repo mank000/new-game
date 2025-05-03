@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://bu2nq0hhxq7pg"]
+
+[ext_resource type="Texture2D" uid="uid://c3ahj8fa62o14" path="res://assets/wolfpack/full_color/wolf_gray_full.png" id="1_jrowp"]
+[ext_resource type="PackedScene" uid="uid://b8d653hninrw4" path="res://scenes/killzone.tscn" id="2_3a5b2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aexq3"]
+atlas = ExtResource("1_jrowp")
+region = Rect2(0, 196, 32, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0rve"]
+atlas = ExtResource("1_jrowp")
+region = Rect2(32, 196, 32, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf2yl"]
+atlas = ExtResource("1_jrowp")
+region = Rect2(64, 196, 32, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_702ps"]
+atlas = ExtResource("1_jrowp")
+region = Rect2(96, 196, 32, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u83lg"]
+atlas = ExtResource("1_jrowp")
+region = Rect2(128, 196, 32, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frkpr"]
+atlas = ExtResource("1_jrowp")
+region = Rect2(160, 196, 32, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yg3wg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aexq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0rve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf2yl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_702ps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u83lg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frkpr")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsq4n"]
+size = Vector2(19, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrowp"]
+size = Vector2(19, 16)
+
+[node name="WOLF" type="CharacterBody2D"]
+physics_interpolation_mode = 1
+collision_layer = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_yg3wg")
+animation = &"Run"
+autoplay = "Run"
+frame_progress = 0.352426
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -8)
+shape = SubResource("RectangleShape2D_xsq4n")
+
+[node name="Killzone" parent="." instance=ExtResource("2_3a5b2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0.5, -8)
+shape = SubResource("RectangleShape2D_jrowp")

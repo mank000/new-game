@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://dxrkn28a2msmq"]
+[gd_scene load_steps=33 format=4 uid="uid://dxrkn28a2msmq"]
 
 [ext_resource type="Script" uid="uid://mf7pnmxyecb0" path="res://scripts/g_m.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://c6qptutfi6piu" path="res://assets/Free Pixel Art Forest/PNG/Background layers/Layer_0000_9.png" id="1_dinhu"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://rgykfeywj8ly" path="res://scenes/pie.tscn" id="15_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bu2nq0hhxq7pg" path="res://scenes/wolf.tscn" id="17_rysoc"]
 [ext_resource type="Script" uid="uid://dv3mw6rprj6n8" path="res://scripts/wolf.gd" id="18_ssvqc"]
-[ext_resource type="PackedScene" uid="uid://j1850870rosq" path="res://scenes/save_place.tscn" id="19_264po"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1j6l"]
 texture = ExtResource("1_dinhu")
@@ -11986,9 +11985,6 @@ sources/11 = SubResource("TileSetAtlasSource_qnb83")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_trtic"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_264po"]
-size = Vector2(20, 136)
-
 [node name="Game" type="Node2D"]
 position = Vector2(90, 552)
 scale = Vector2(1.00134, 1)
@@ -12043,13 +12039,5 @@ collision_mask = 2
 [node name="WOLF" parent="." instance=ExtResource("17_rysoc")]
 physics_interpolation_mode = 0
 position = Vector2(10.9853, 31)
+collision_mask = 2
 script = ExtResource("18_ssvqc")
-
-[node name="SavePlace" parent="." instance=ExtResource("19_264po")]
-position = Vector2(723.031, 31)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SavePlace"]
-position = Vector2(0.998662, -68)
-shape = SubResource("RectangleShape2D_264po")
-
-[connection signal="body_entered" from="SavePlace" to="SavePlace" method="_on_body_entered"]

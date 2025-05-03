@@ -94,7 +94,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 5.0
 }]
 
 [node name="Area2D2" type="Area2D"]
@@ -107,5 +107,7 @@ shape = SubResource("CircleShape2D_ca42v")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(24, -1)
 sprite_frames = SubResource("SpriteFrames_suyxu")
+autoplay = "default"
+frame_progress = 0.184842
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

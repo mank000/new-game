@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://j1850870rosq"]
+
+[ext_resource type="Script" uid="uid://c1iii5dtsmpvg" path="res://scripts/save_place.gd" id="1_3vo3v"]
+
+[node name="SavePlace" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_3vo3v")

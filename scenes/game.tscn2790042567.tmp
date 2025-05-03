@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://dxrkn28a2msmq"]
+[gd_scene load_steps=31 format=4 uid="uid://dxrkn28a2msmq"]
 
 [ext_resource type="Script" uid="uid://mf7pnmxyecb0" path="res://scripts/g_m.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://c6qptutfi6piu" path="res://assets/Free Pixel Art Forest/PNG/Background layers/Layer_0000_9.png" id="1_dinhu"]
@@ -15,10 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://nyhnt5pkrj3s" path="res://assets/Free Pixel Art Forest/PNG/Background layers/Layer_0008_3.png" id="11_37s47"]
 [ext_resource type="Texture2D" uid="uid://b8xcyy4wc0srn" path="res://assets/Free Pixel Art Forest/PNG/Background layers/Layer_0009_2.png" id="12_bt5mj"]
 [ext_resource type="PackedScene" uid="uid://b8d653hninrw4" path="res://scenes/killzone.tscn" id="14_trtic"]
-[ext_resource type="PackedScene" uid="uid://rgykfeywj8ly" path="res://scenes/pie.tscn" id="15_ir15t"]
-[ext_resource type="PackedScene" uid="uid://bu2nq0hhxq7pg" path="res://scenes/wolf.tscn" id="17_rysoc"]
-[ext_resource type="Script" uid="uid://dv3mw6rprj6n8" path="res://scripts/wolf.gd" id="18_ssvqc"]
-[ext_resource type="PackedScene" uid="uid://j1850870rosq" path="res://scenes/save_place.tscn" id="19_264po"]
+[ext_resource type="PackedScene" uid="uid://rgykfeywj8ly" path="res://scenes/area_2d_2.tscn" id="15_ir15t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1j6l"]
 texture = ExtResource("1_dinhu")
@@ -11986,39 +11983,35 @@ sources/11 = SubResource("TileSetAtlasSource_qnb83")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_trtic"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_264po"]
-size = Vector2(20, 136)
-
 [node name="Game" type="Node2D"]
-position = Vector2(90, 552)
-scale = Vector2(1.00134, 1)
+position = Vector2(0, -2)
 
 [node name="gm" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_ca42v")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-z_index = 5
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -10.0
-offset_bottom = 23.0
-grow_horizontal = 0
-size_flags_horizontal = 8
-size_flags_vertical = 0
-text = "0"
-
 [node name="PLAYER" parent="." instance=ExtResource("1_kvuet")]
-position = Vector2(90.8782, 15)
+position = Vector2(15, 1)
 
 [node name="Camera2D" type="Camera2D" parent="PLAYER"]
-position = Vector2(-2.01735, -3)
+position = Vector2(27, 7)
 zoom = Vector2(2, 2)
+limit_bottom = 130
+limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
+
+[node name="Label" type="Label" parent="PLAYER/Camera2D"]
+anchors_preset = -1
+anchor_left = 0.185
+anchor_top = -0.093
+anchor_right = 0.212
+anchor_bottom = -0.081
+offset_left = -138.0
+offset_top = -162.0
+offset_right = -130.104
+offset_bottom = -139.0
+text = "0"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAIAAQAMAC4AAAAAAAMAAQAMAC8AAAAAAAQAAQAMADAAAAABAAIAAQANAC4AAAABAAMAAQANAC8AAAABAAQAAQANADAAAAACAAIAAQAOAC4AAAACAAMAAQAOAC8AAAACAAQAAQAOADAAAAADAAIAAQAPAC4AAAADAAMAAQAPAC8AAAADAAQAAQAPADAAAAAEAAIAAQAMAC4AAAAEAAMAAQAMAC8AAAAEAAQAAQAMADAAAAAFAAIAAQANAC4AAAAFAAMAAQANAC8AAAAFAAQAAQANADAAAAAGAAIAAQAOAC4AAAAGAAMAAQAOAC8AAAAGAAQAAQAOADAAAAAHAAIAAQAPAC4AAAAHAAMAAQAPAC8AAAAHAAQAAQAPADAAAAAIAAIAAQAMAC4AAAAIAAMAAQAMAC8AAAAIAAQAAQAMADAAAAAJAAIAAQANAC4AAAAJAAMAAQANAC8AAAAJAAQAAQANADAAAAAKAAIAAQAOAC4AAAAKAAMAAQAOAC8AAAAKAAQAAQAOADAAAAALAAIAAQAPAC4AAAALAAMAAQAPAC8AAAALAAQAAQAPADAAAAAMAAIAAQAMAC4AAAAMAAMAAQAMAC8AAAAMAAQAAQAMADAAAAANAAIAAQANAC4AAAANAAMAAQANAC8AAAANAAQAAQANADAAAAAOAAIAAQAOAC4AAAAOAAMAAQAOAC8AAAAOAAQAAQAOADAAAAAPAAIAAQAMAC4AAAAPAAMAAQAMAC8AAAAPAAQAAQAMADAAAAAQAAIAAQANAC4AAAAQAAMAAQANAC8AAAAQAAQAAQANADAAAAARAAIAAQAOAC4AAAARAAMAAQAOAC8AAAARAAQAAQAOADAAAAASAAIAAQAMAC4AAAASAAMAAQAMAC8AAAASAAQAAQAMADAAAAATAAIAAQANAC4AAAATAAMAAQANAC8AAAATAAQAAQANADAAAAAUAAIAAQAOAC4AAAAUAAMAAQAOAC8AAAAUAAQAAQAOADAAAAAVAAIAAQAPAC4AAAAVAAMAAQAPAC8AAAAVAAQAAQAPADAAAAAWAAIAAQAMAC4AAAAWAAMAAQAMAC8AAAAWAAQAAQAMADAAAAAXAAIAAQANAC4AAAAXAAMAAQANAC8AAAAXAAQAAQANADAAAAAYAAIAAQAOAC4AAAAYAAMAAQAOAC8AAAAYAAQAAQAOADAAAAAZAAIAAQAMAC4AAAAZAAMAAQAMAC8AAAAZAAQAAQAMADAAAAAaAAIAAQANAC4AAAAaAAMAAQANAC8AAAAaAAQAAQANADAAAAAbAAIAAQAMAC4AAAAbAAMAAQAMAC8AAAAbAAQAAQAMADAAAAAcAAIAAQANAC4AAAAcAAMAAQANAC8AAAAcAAQAAQANADAAAAAdAAIAAQAOAC4AAAAdAAMAAQAOAC8AAAAdAAQAAQAOADAAAAAeAAIAAQAMAC4AAAAeAAMAAQAMAC8AAAAeAAQAAQAMADAAAAAfAAIAAQANAC4AAAAfAAMAAQANAC8AAAAfAAQAAQANADAAAAAgAAIAAQAOAC4AAAAgAAMAAQAOAC8AAAAgAAQAAQAOADAAAAAhAAIAAQAPAC4AAAAhAAMAAQAPAC8AAAAhAAQAAQAPADAAAAAiAAIAAQAMAC4AAAAiAAMAAQAMAC8AAAAiAAQAAQAMADAAAAAjAAIAAQANAC4AAAAjAAMAAQANAC8AAAAjAAQAAQANADAAAAAkAAIAAQAOAC4AAAAkAAMAAQAOAC8AAAAkAAQAAQAOADAAAAAlAAIAAQAPAC4AAAAlAAMAAQAPAC8AAAAlAAQAAQAPADAAAAAmAAIAAQAMAC4AAAAmAAMAAQAMAC8AAAAmAAQAAQAMADAAAAAnAAIAAQANAC4AAAAnAAMAAQANAC8AAAAnAAQAAQANADAAAAAoAAIAAQAOAC4AAAAoAAMAAQAOAC8AAAAoAAQAAQAOADAAAAApAAIAAQAPAC4AAAApAAMAAQAPAC8AAAApAAQAAQAPADAAAAAqAAIAAQAMAC4AAAAqAAMAAQAMAC8AAAAqAAQAAQAMADAAAAArAAIAAQANAC4AAAArAAMAAQANAC8AAAArAAQAAQANADAAAAAsAAIAAQAOAC4AAAAsAAMAAQAOAC8AAAAsAAQAAQAOADAAAAAtAAIAAQAPAC4AAAAtAAMAAQAPAC8AAAAtAAQAAQAPADAAAAAMAAEAAQAEAC4AAAANAAEAAQAEAC4AAAAOAAEAAQAEAC4AAAAPAAEAAQAEAC4AAAAQAAEAAQAEAC4AAAATAAEAAQAEAC4AAAAUAAEAAQAEAC4AAAAVAAEAAQAEAC4AAAA=")
@@ -12031,25 +12024,11 @@ position = Vector2(-5, 82)
 scale = Vector2(1, 1.68)
 shape = SubResource("WorldBoundaryShape2D_trtic")
 
-[node name="pie1" parent="." instance=ExtResource("15_ir15t")]
+[node name="Area2D2" parent="." instance=ExtResource("15_ir15t")]
 position = Vector2(85, 15)
 collision_mask = 2
 
-[node name="pie2" parent="." instance=ExtResource("15_ir15t")]
+[node name="Area2D3" parent="." instance=ExtResource("15_ir15t")]
 position = Vector2(136, 11)
 collision_layer = 2
 collision_mask = 2
-
-[node name="WOLF" parent="." instance=ExtResource("17_rysoc")]
-physics_interpolation_mode = 0
-position = Vector2(10.9853, 31)
-script = ExtResource("18_ssvqc")
-
-[node name="SavePlace" parent="." instance=ExtResource("19_264po")]
-position = Vector2(723.031, 31)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SavePlace"]
-position = Vector2(0.998662, -68)
-shape = SubResource("RectangleShape2D_264po")
-
-[connection signal="body_entered" from="SavePlace" to="SavePlace" method="_on_body_entered"]
