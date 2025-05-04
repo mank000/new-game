@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b8d653hninrw4" path="res://scenes/killzone.tscn" id="14_trtic"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_trtic"]
-distance = -118.0
+distance = -336.0
 
 [node name="Game" type="Node2D"]
 position = Vector2(0, -2)

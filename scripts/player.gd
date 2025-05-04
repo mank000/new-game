@@ -24,10 +24,8 @@ func _physics_process(delta: float) -> void:
 	
 	if direction > 0:
 		animated.flip_h = false
-
 	elif direction < 0:
 		animated.flip_h = true
-
 	if direction:
 		velocity.x = direction * SPEED
 	else:
