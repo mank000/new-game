@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://x03rvlv6rs8k"]
+
+[ext_resource type="Script" uid="uid://by56j1mllk1dx" path="res://scripts/thanks_level.gd" id="1_7q03n"]
+[ext_resource type="Texture2D" uid="uid://co0km08fw4w3v" path="res://assets/Free Pixel Art Forest/Preview/Background.png" id="2_7q03n"]
+[ext_resource type="Texture2D" uid="uid://ci6wc2fdqc8hj" path="res://assets/Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Button/Rect/Fill/Default.png" id="2_gxnth"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7q03n"]
+texture = ExtResource("2_7q03n")
+
+[node name="Thanks_level" type="Node2D"]
+script = ExtResource("1_7q03n")
+
+[node name="Panel" type="Panel" parent="."]
+z_as_relative = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.0
+offset_top = -325.0
+offset_right = 566.0
+offset_bottom = 316.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00187, 1.00293)
+theme_override_styles/panel = SubResource("StyleBoxTexture_7q03n")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = -10
+
+[node name="Exit" type="Button" parent="."]
+offset_left = -101.0
+offset_top = 35.0
+offset_right = 103.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0.773856, 2.23808e-06, 9.62615e-07, 1)
+text = "Выход"
+icon = ExtResource("2_gxnth")
+flat = true
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.247
+offset_top = -32.1439
+offset_right = 164.753
+offset_bottom = 22.8561
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Спасибо за игру!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
